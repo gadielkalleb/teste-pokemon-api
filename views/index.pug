@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p #{message}
+
+  h1 Lista de Pokemons
+
+  if error
+    p Erro ao carregar o conteudo dinâmico.
+  else
+    ul
+      li #[strong Total de Pokemons:] !{data.pokemon_count}
+      

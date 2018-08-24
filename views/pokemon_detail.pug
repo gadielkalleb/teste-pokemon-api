@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+  if (pokemon)
+    h1 Pokemon: #{pokemon.name}
+  
+  
+    div(style='margin-left:20px;margin-top:20px')
+
+      p Preço: #{pokemon.price}
+      p Quatidade: #{pokemon.stock}
+      p Descrição: #{pokemon.descricao}
+    
+    a(href=pokemon.url+'/buy-pokemons') comprar pokemon
+    
+  else
+    p Não há pokemons.
+

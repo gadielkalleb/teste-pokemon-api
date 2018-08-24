@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Nome do Pokemon:
+      input#name.form-control(type='text', placeholder='Digite o nome do pokemon' name='name' required='true' value=(undefined===pokemon ? '' : pokemon.name) )
+
+      label(for='tipo') Tipo do Pokemon:
+      input#tipo.form-control(type='text', placeholder='Digite o tipo do pokemon' name='tipo' required='true' value=(undefined===pokemon ? '' : pokemon.tipo))
+
+      label(for='price') Preço do Pokemon:
+      input#price.form-control(type='number', placeholder='Valor do pokemon' name='price' required='true' value=(undefined===pokemon ? '' : pokemon.price))
+
+      label(for='stock') Quantidade de Pokemon:
+      input#stock.form-control(type='number', placeholder='Quantidade' name='stock' required='false' value=(undefined===pokemon ? '' : pokemon.stock))
+
+      label(for='descricao') Descrição do Pokemon:
+      input#descricao.form-control(type='text', placeholder='Descricao do pokemon' name='descricao' required='false' value=(undefined===pokemon ? '' : pokemon.descricao))
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

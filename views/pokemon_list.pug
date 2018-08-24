@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+  each pokemon in pokemon_list
+    li 
+      a(href=pokemon.url) #{pokemon.name}
+  else
+    li 
+      p Não há pokemons cadastrados.
